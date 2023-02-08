@@ -2,9 +2,11 @@
 
 namespace App\Form;
 
+use App\Entity\User;
 use App\Entity\Board;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class BoardType extends AbstractType
@@ -14,8 +16,17 @@ class BoardType extends AbstractType
         $builder
             ->add('libelle')
             ->add('background')
-            ->add('owner')
-            ->add('users')
+            ->add('users', EntityType::class, [
+                // looks for choices from this entity
+                'class' => User::class,
+            
+                // uses the User.username property as the visible option string
+                'choice_label' => 'email',
+            
+                // used to render a select box, check boxes or radios
+                'multiple' => true,
+                'expanded' => false,
+            ]);
         ;
     }
 
