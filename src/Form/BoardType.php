@@ -19,10 +19,9 @@ class BoardType extends AbstractType
             ->add('users', EntityType::class, [
                 // looks for choices from this entity
                 'class' => User::class,
-            
+                'mapped' => true,
                 // uses the User.username property as the visible option string
                 'choice_label' => 'email',
-            
                 // used to render a select box, check boxes or radios
                 'multiple' => true,
                 'expanded' => false,
