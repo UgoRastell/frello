@@ -26,9 +26,12 @@ class BoardController extends AbstractController
     {
         $board = new Board();
         $form = $this->createForm(BoardType::class, $board);
+        $user = $this->getUser();
+        $board->setOwner($user);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+          
             $boardRepository->save($board, true);
 
             return $this->redirectToRoute('app_board_index', [], Response::HTTP_SEE_OTHER);
