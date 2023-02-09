@@ -18,22 +18,18 @@ class Board
     #[ORM\Column(length: 255)]
     private ?string $libelle = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $background = null;
-
-    #[ORM\OneToMany(mappedBy: 'board', targetEntity: TaskList::class)]
-    private Collection $board;
 
     #[ORM\ManyToOne(inversedBy: 'owner')]
     private ?User $owner = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'board')]
-    private Collection $users;
+    #[ORM\ManyToMany(targetEntity: user::class, inversedBy: 'board')]
+    private Collection $user;
 
     public function __construct()
     {
-        $this->board = new ArrayCollection();
-        $this->users = new ArrayCollection();
+        $this->user = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -58,39 +54,9 @@ class Board
         return $this->background;
     }
 
-    public function setBackground(string $background): self
+    public function setBackground(?string $background): self
     {
         $this->background = $background;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, TaskList>
-     */
-    public function getBoard(): Collection
-    {
-        return $this->board;
-    }
-
-    public function addBoard(TaskList $board): self
-    {
-        if (!$this->board->contains($board)) {
-            $this->board->add($board);
-            $board->setBoard($this);
-        }
-
-        return $this;
-    }
-
-    public function removeBoard(TaskList $board): self
-    {
-        if ($this->board->removeElement($board)) {
-            // set the owning side to null (unless already changed)
-            if ($board->getBoard() === $this) {
-                $board->setBoard(null);
-            }
-        }
 
         return $this;
     }
@@ -108,28 +74,25 @@ class Board
     }
 
     /**
-     * @return Collection<int, User>
+     * @return Collection<int, user>
      */
-    public function getUsers(): Collection
+    public function getUser(): Collection
     {
-        return $this->users;
+        return $this->user;
     }
 
-    public function addUser(User $user): self
+    public function addUser(user $user): self
     {
-        if (!$this->users->contains($user)) {
-            $this->users->add($user);
-            $user->addBoard($this);
+        if (!$this->user->contains($user)) {
+            $this->user->add($user);
         }
 
         return $this;
     }
 
-    public function removeUser(User $user): self
+    public function removeUser(user $user): self
     {
-        if ($this->users->removeElement($user)) {
-            $user->removeBoard($this);
-        }
+        $this->user->removeElement($user);
 
         return $this;
     }

@@ -15,14 +15,11 @@ class TaskList
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255)]
     private ?string $libelle = null;
 
     #[ORM\OneToMany(mappedBy: 'task_list', targetEntity: Task::class)]
     private Collection $task_list;
-
-    #[ORM\ManyToOne(inversedBy: 'board')]
-    private ?Board $board = null;
 
     public function __construct()
     {
@@ -39,7 +36,7 @@ class TaskList
         return $this->libelle;
     }
 
-    public function setLibelle(?string $libelle): self
+    public function setLibelle(string $libelle): self
     {
         $this->libelle = $libelle;
 
@@ -60,7 +57,7 @@ class TaskList
             $this->task_list->add($taskList);
             $taskList->setTaskList($this);
         }
-        
+
         return $this;
     }
 
@@ -72,18 +69,6 @@ class TaskList
                 $taskList->setTaskList(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getBoard(): ?Board
-    {
-        return $this->board;
-    }
-
-    public function setBoard(?Board $board): self
-    {
-        $this->board = $board;
 
         return $this;
     }

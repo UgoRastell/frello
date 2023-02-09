@@ -24,7 +24,7 @@ class Task
     #[ORM\ManyToOne(inversedBy: 'task_list')]
     private ?TaskList $task_list = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'tasks')]
+    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'task')]
     private Collection $user;
 
     public function __construct()

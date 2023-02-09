@@ -16,7 +16,7 @@ class BoardType extends AbstractType
         $builder
             ->add('libelle')
             ->add('background')
-            ->add('users', EntityType::class, [
+            ->add('user', EntityType::class, [
                 // looks for choices from this entity
                 'class' => User::class,
                 'mapped' => true,
