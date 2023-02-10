@@ -35,8 +35,8 @@ services:
       - php
       - database
 
-  php:
-    container_name: php
+  website:
+    container_name: website
     working_dir: "/var/www/html"
     build:
       context: .
