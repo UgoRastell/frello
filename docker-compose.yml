@@ -10,8 +10,8 @@ services:
       MYSQL_DATABASE: frello
       MYSQL_USER: root
       MYSQL_PASSWORD: root
-    ports:
-      - "4306:3306"
+    # ports:
+    #   - "4306:3306"
     volumes:
       - mysql:/var/lib/mysql
 
