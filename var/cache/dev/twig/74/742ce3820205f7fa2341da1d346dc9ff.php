@@ -149,7 +149,7 @@ class __TwigTemplate_c5e1f127b993ace4ab4f13ec6479c9b6 extends Template
     <a href=\"";
         // line 37
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_board_new");
-        echo "\">Create new</a>
+        echo "\">Creer un nouveau tableau</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -212,7 +212,7 @@ class __TwigTemplate_c5e1f127b993ace4ab4f13ec6479c9b6 extends Template
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_board_new') }}\">Create new</a>
+    <a href=\"{{ path('app_board_new') }}\">Creer un nouveau tableau</a>
 {% endblock %}
 ", "board/index.html.twig", "C:\\Users\\ugora\\Desktop\\dev\\frello\\templates\\board\\index.html.twig");
     }
