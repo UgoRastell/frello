@@ -66,11 +66,21 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         // line 18
         echo "    </head>
     <body>
-        <div class=\"container\">
+        ";
+        // line 20
+        if (((isset($context["userLogged"]) || array_key_exists("userLogged", $context) ? $context["userLogged"] : (function () { throw new RuntimeError('Variable "userLogged" does not exist.', 20, $this->source); })()) == null)) {
+            // line 21
+            echo "            ";
+            $this->loadTemplate("navbar.html.twig", "base.html.twig", 21)->display($context);
+            // line 22
+            echo "        ";
+        }
+        // line 23
+        echo "        <div class=\"container\">
             ";
-        // line 21
+        // line 24
         $this->displayBlock('body', $context, $blocks);
-        // line 22
+        // line 25
         echo "        </div>
         
     </body>
@@ -151,7 +161,7 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
 
     }
 
-    // line 21
+    // line 24
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -174,9 +184,14 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  155 => 21,  140 => 14,  130 => 13,  117 => 10,  107 => 9,  88 => 5,  74 => 22,  72 => 21,  67 => 18,  65 => 13,  62 => 12,  59 => 9,  53 => 5,  47 => 1,);
+        return array (  165 => 24,  150 => 14,  140 => 13,  127 => 10,  117 => 9,  98 => 5,  84 => 25,  82 => 24,  79 => 23,  76 => 22,  73 => 21,  71 => 20,  67 => 18,  65 => 13,  62 => 12,  59 => 9,  53 => 5,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -200,6 +215,9 @@ class __TwigTemplate_d37d1c3621cb1b31c9f974580366ac09 extends Template
         {% endblock %}
     </head>
     <body>
+        {% if userLogged == null %}
+            {% include 'navbar.html.twig' %}
+        {% endif %}
         <div class=\"container\">
             {% block body %}{% endblock %}
         </div>

@@ -75,25 +75,87 @@ class __TwigTemplate_2d608ee766b735fbc5bf0d7fe3b3379f extends Template
         }
         // line 10
         echo "
-    <form action=\"";
-        // line 11
+    <section class=\"mt-5\">
+        <div class=\"px-4 py-5 px-md-5 text-center text-lg-start\" style=\"background-color: hsl(0, 0%, 96%)\">
+            <div class=\"container\">
+            <div class=\"row gx-lg-5 align-items-center\">
+                <div class=\"col-lg-6 mb-5 mb-lg-0\">
+                <h1 class=\"my-5 display-3 fw-bold ls-tight\">
+                    The best offer <br />
+                    <span class=\"text-primary\">for your business</span>
+                </h1>
+                <p style=\"color: hsl(217, 10%, 50.8%)\">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+                    quibusdam tempora at cupiditate quis eum maiores libero
+                    veritatis? Dicta facilis sint aliquid ipsum atque?
+                </p>
+                </div>
+
+                <div class=\"col-lg-6 mb-5 mb-lg-0\">
+                    <div class=\"card\">
+                        <div class=\"card-body py-5 px-md-5\">
+                        <form action=\"";
+        // line 31
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\" method=\"post\">
-        <label for=\"username\">Email:</label>
-        <input type=\"text\" id=\"username\" name=\"_username\" value=\"\">
+                            <!-- Email input -->
+                            <div class=\"form-outline mb-4\">
+                                <label for=\"username\" class=\"form-label\">Email:</label>
+                                <input type=\"text\" id=\"username\" name=\"_username\" value=\"\" class=\"form-control\">
+                            </div>
 
-        <label for=\"password\">Password:</label>
-        <input type=\"password\" id=\"password\" name=\"_password\">
+                            <!-- Password input -->
+                            <div class=\"form-outline mb-4\">
+                                <label for=\"password\" class=\"form-label\">Password:</label>
+                                <input type=\"password\" id=\"password\" name=\"_password\" class=\"form-control\">
+                            </div>
+                            
+                            <!-- Submit button -->
+                            <button type=\"submit\" class=\"btn btn-primary btn-block mb-4\">
+                            Connexion
+                            </button>
+                            </form>
+                            <!-- Register button -->
+                            <form action=\"";
+        // line 50
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        echo "\" method=\"post\">
+                                <button type=\"submit\" class=\"btn btn-primary btn-block mb-4 pl-1\">
+                                Creer un compte
+                                </button>
+                            </form>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
 
+
+    ";
+        // line 67
+        echo "        ";
+        // line 68
+        echo "        ";
+        // line 69
+        echo "
         ";
-        // line 19
-        echo "        <input type=\"hidden\" name=\"_target_path\" value=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_board_index");
-        echo "\">
-
-        <button type=\"submit\">login</button>
-    </form>
-";
+        // line 71
+        echo "        ";
+        // line 72
+        echo "
+        ";
+        // line 74
+        echo "        ";
+        // line 75
+        echo "
+        ";
+        // line 77
+        echo "    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -114,7 +176,7 @@ class __TwigTemplate_2d608ee766b735fbc5bf0d7fe3b3379f extends Template
 
     public function getDebugInfo()
     {
-        return array (  90 => 19,  80 => 11,  77 => 10,  71 => 8,  68 => 7,  58 => 6,  35 => 2,);
+        return array (  158 => 77,  155 => 75,  153 => 74,  150 => 72,  148 => 71,  145 => 69,  143 => 68,  141 => 67,  122 => 50,  100 => 31,  77 => 10,  71 => 8,  68 => 7,  58 => 6,  35 => 2,);
     }
 
     public function getSourceContext()
@@ -129,18 +191,73 @@ class __TwigTemplate_2d608ee766b735fbc5bf0d7fe3b3379f extends Template
             <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
 
-    <form action=\"{{ path('app_login') }}\" method=\"post\">
-        <label for=\"username\">Email:</label>
-        <input type=\"text\" id=\"username\" name=\"_username\" value=\"\">
+    <section class=\"mt-5\">
+        <div class=\"px-4 py-5 px-md-5 text-center text-lg-start\" style=\"background-color: hsl(0, 0%, 96%)\">
+            <div class=\"container\">
+            <div class=\"row gx-lg-5 align-items-center\">
+                <div class=\"col-lg-6 mb-5 mb-lg-0\">
+                <h1 class=\"my-5 display-3 fw-bold ls-tight\">
+                    The best offer <br />
+                    <span class=\"text-primary\">for your business</span>
+                </h1>
+                <p style=\"color: hsl(217, 10%, 50.8%)\">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eveniet, itaque accusantium odio, soluta, corrupti aliquam
+                    quibusdam tempora at cupiditate quis eum maiores libero
+                    veritatis? Dicta facilis sint aliquid ipsum atque?
+                </p>
+                </div>
 
-        <label for=\"password\">Password:</label>
-        <input type=\"password\" id=\"password\" name=\"_password\">
+                <div class=\"col-lg-6 mb-5 mb-lg-0\">
+                    <div class=\"card\">
+                        <div class=\"card-body py-5 px-md-5\">
+                        <form action=\"{{ path('app_login') }}\" method=\"post\">
+                            <!-- Email input -->
+                            <div class=\"form-outline mb-4\">
+                                <label for=\"username\" class=\"form-label\">Email:</label>
+                                <input type=\"text\" id=\"username\" name=\"_username\" value=\"\" class=\"form-control\">
+                            </div>
+
+                            <!-- Password input -->
+                            <div class=\"form-outline mb-4\">
+                                <label for=\"password\" class=\"form-label\">Password:</label>
+                                <input type=\"password\" id=\"password\" name=\"_password\" class=\"form-control\">
+                            </div>
+                            
+                            <!-- Submit button -->
+                            <button type=\"submit\" class=\"btn btn-primary btn-block mb-4\">
+                            Connexion
+                            </button>
+                            </form>
+                            <!-- Register button -->
+                            <form action=\"{{ path('app_register') }}\" method=\"post\">
+                                <button type=\"submit\" class=\"btn btn-primary btn-block mb-4 pl-1\">
+                                Creer un compte
+                                </button>
+                            </form>
+                            </div>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+    {# <form action=\"{{ path('app_login') }}\" method=\"post\"> #}
+        {# <label for=\"username\">Email:</label> #}
+        {# <input type=\"text\" id=\"username\" name=\"_username\" value=\"\"> #}
+
+        {# <label for=\"password\">Password:</label> #}
+        {# <input type=\"password\" id=\"password\" name=\"_password\"> #}
 
         {# If you want to control the URL the user is redirected to on success #}
-        <input type=\"hidden\" name=\"_target_path\" value=\"{{ path('app_board_index') }}\">
+        {# <input type=\"hidden\" name=\"_target_path\" value=\"{{ path('app_board_index') }}\"> #}
 
-        <button type=\"submit\">login</button>
-    </form>
+        {# <button type=\"submit\">login</button> #}
+    {# </form> #}
 {% endblock %}
 ", "login/index.html.twig", "C:\\Users\\ugora\\Desktop\\dev\\frello\\templates\\login\\index.html.twig");
     }
