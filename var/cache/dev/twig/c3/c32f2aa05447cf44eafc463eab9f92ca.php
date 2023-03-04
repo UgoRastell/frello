@@ -105,10 +105,7 @@ class __TwigTemplate_32ef12825c25ee0c5ffc377f108d0234 extends Template
 
     <table class=\"table\">
         <tbody>
-           ";
-        // line 17
-        echo twig_include($this->env, $context, "../task_list/new.html.twig");
-        echo "
+           
         </tbody>
     </table>
     
@@ -133,7 +130,7 @@ class __TwigTemplate_32ef12825c25ee0c5ffc377f108d0234 extends Template
 
     public function getDebugInfo()
     {
-        return array (  110 => 17,  101 => 11,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  101 => 11,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -154,7 +151,7 @@ class __TwigTemplate_32ef12825c25ee0c5ffc377f108d0234 extends Template
 
     <table class=\"table\">
         <tbody>
-           {{ include('../task_list/new.html.twig') }}
+           
         </tbody>
     </table>
     

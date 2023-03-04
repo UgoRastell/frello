@@ -43,6 +43,7 @@ class BoardController extends AbstractController
         $board = new Board();
         $users = [$user];
 
+        $board->setOwner($user);
 
         $form = $this->createForm(BoardType::class, $board, [
             'users' => $users,
@@ -62,7 +63,6 @@ class BoardController extends AbstractController
             'userLogged' => $userLogged
         ]);
     }
-
 
 
     #[Route('/{id}', name: 'app_board_show', methods: ['GET'])]

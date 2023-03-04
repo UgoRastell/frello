@@ -22,7 +22,8 @@ class BoardType extends AbstractType
                 'choice_label' => 'email',
                 'multiple' => true,
                 'expanded' => false,
-                'choices' => $options['users'], // inject users as choices
+                'choices' => $options['users'],
+                'choice_value' => 'id', 
             ])
         ;
     }
