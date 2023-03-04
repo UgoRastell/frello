@@ -15,17 +15,7 @@ class BoardType extends AbstractType
     {
         $builder
             ->add('libelle')
-            ->add('background')
-            ->add('user', EntityType::class, [
-                'class' => User::class,
-                'mapped' => true,
-                'choice_label' => 'email',
-                'multiple' => true,
-                'expanded' => false,
-                'choices' => $options['users'],
-                'choice_value' => 'id', 
-            ])
-        ;
+            ->add('background');
     }
 
     public function configureOptions(OptionsResolver $resolver): void
