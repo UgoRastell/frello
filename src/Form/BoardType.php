@@ -11,8 +11,11 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class BoardType extends AbstractType
 {
+    
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+       
         $builder
             ->add('libelle')
             ->add('background')
@@ -25,7 +28,7 @@ class BoardType extends AbstractType
                 // used to render a select box, check boxes or radios
                 'multiple' => true,
                 'expanded' => false,
-            ]);
+            ])
         ;
     }
 

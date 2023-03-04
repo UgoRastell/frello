@@ -85,20 +85,15 @@ class __TwigTemplate_28bce8b9ca2ea7513a27995f9cf8f8f4 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Edit Board</h1>
+        echo "    <h1>Modifier vôtre tableau</h1>
 
     ";
         // line 8
-        echo twig_include($this->env, $context, "board/_form.html.twig", ["button_label" => "Update"]);
+        echo twig_include($this->env, $context, "board/_form.html.twig", ["button_label" => "Mettre à jour"]);
         echo "
 
-    <a href=\"";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_board_index");
-        echo "\">back to list</a>
-
     ";
-        // line 12
+        // line 10
         echo twig_include($this->env, $context, "board/_delete_form.html.twig");
         echo "
 ";
@@ -122,7 +117,7 @@ class __TwigTemplate_28bce8b9ca2ea7513a27995f9cf8f8f4 extends Template
 
     public function getDebugInfo()
     {
-        return array (  102 => 12,  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -132,11 +127,9 @@ class __TwigTemplate_28bce8b9ca2ea7513a27995f9cf8f8f4 extends Template
 {% block title %}Edit Board{% endblock %}
 
 {% block body %}
-    <h1>Edit Board</h1>
+    <h1>Modifier vôtre tableau</h1>
 
-    {{ include('board/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href=\"{{ path('app_board_index') }}\">back to list</a>
+    {{ include('board/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
 
     {{ include('board/_delete_form.html.twig') }}
 {% endblock %}

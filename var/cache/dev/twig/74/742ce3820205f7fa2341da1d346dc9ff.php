@@ -86,46 +86,36 @@ class __TwigTemplate_c5e1f127b993ace4ab4f13ec6479c9b6 extends Template
 
         // line 6
         echo "
-    <h1>Board index</h1>
+    <h1>Mes tableaux</h1>
 
     <table class=\"table\">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Libelle</th>
-                <th>Background</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         ";
-        // line 19
+        // line 17
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["boards"]) || array_key_exists("boards", $context) ? $context["boards"] : (function () { throw new RuntimeError('Variable "boards" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["boards"]) || array_key_exists("boards", $context) ? $context["boards"] : (function () { throw new RuntimeError('Variable "boards" does not exist.', 17, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["board"]) {
-            // line 20
+            // line 18
             echo "            <tr>
                 <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["board"], "id", [], "any", false, false, false, 21), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 22
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["board"], "libelle", [], "any", false, false, false, 22), "html", null, true);
-            echo "</td>
-                <td>";
-            // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["board"], "background", [], "any", false, false, false, 23), "html", null, true);
+            // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["board"], "libelle", [], "any", false, false, false, 19), "html", null, true);
             echo "</td>
                 <td>
-                    <a href=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_board_show", ["id" => twig_get_attribute($this->env, $this->source, $context["board"], "id", [], "any", false, false, false, 25)]), "html", null, true);
+                    <a class=\"btn btn-primary\" href=\"";
+            // line 21
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_board_show", ["id" => twig_get_attribute($this->env, $this->source, $context["board"], "id", [], "any", false, false, false, 21)]), "html", null, true);
             echo "\">show</a>
-                    <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_board_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["board"], "id", [], "any", false, false, false, 26)]), "html", null, true);
+                    <a class=\"btn btn-warning\" href=\"";
+            // line 22
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_board_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["board"], "id", [], "any", false, false, false, 22)]), "html", null, true);
             echo "\">edit</a>
                 </td>
             </tr>
@@ -133,23 +123,21 @@ class __TwigTemplate_c5e1f127b993ace4ab4f13ec6479c9b6 extends Template
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 30
+            // line 26
             echo "            <tr>
-                <td colspan=\"4\">no records found</td>
+                <td colspan=\"4\">Vous n'avez pas encore de tableaux <a class=\"btn btn-primary mr-2\" href=\"";
+            // line 27
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_board_new");
+            echo "\">Créer un nouveau tableau</a></td>
             </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['board'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 30
         echo "        </tbody>
     </table>
-
-    <a href=\"";
-        // line 37
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_board_new");
-        echo "\">Creer un nouveau tableau</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -171,7 +159,7 @@ class __TwigTemplate_c5e1f127b993ace4ab4f13ec6479c9b6 extends Template
 
     public function getDebugInfo()
     {
-        return array (  151 => 37,  146 => 34,  137 => 30,  128 => 26,  124 => 25,  119 => 23,  115 => 22,  111 => 21,  108 => 20,  103 => 19,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  139 => 30,  130 => 27,  127 => 26,  118 => 22,  114 => 21,  109 => 19,  106 => 18,  101 => 17,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -182,37 +170,31 @@ class __TwigTemplate_c5e1f127b993ace4ab4f13ec6479c9b6 extends Template
 
 {% block body %}
 
-    <h1>Board index</h1>
+    <h1>Mes tableaux</h1>
 
     <table class=\"table\">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Libelle</th>
-                <th>Background</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for board in boards %}
             <tr>
-                <td>{{ board.id }}</td>
                 <td>{{ board.libelle }}</td>
-                <td>{{ board.background }}</td>
                 <td>
-                    <a href=\"{{ path('app_board_show', {'id': board.id}) }}\">show</a>
-                    <a href=\"{{ path('app_board_edit', {'id': board.id}) }}\">edit</a>
+                    <a class=\"btn btn-primary\" href=\"{{ path('app_board_show', {'id': board.id}) }}\">show</a>
+                    <a class=\"btn btn-warning\" href=\"{{ path('app_board_edit', {'id': board.id}) }}\">edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan=\"4\">no records found</td>
+                <td colspan=\"4\">Vous n'avez pas encore de tableaux <a class=\"btn btn-primary mr-2\" href=\"{{ path('app_board_new') }}\">Créer un nouveau tableau</a></td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href=\"{{ path('app_board_new') }}\">Creer un nouveau tableau</a>
 {% endblock %}
 ", "board/index.html.twig", "C:\\Users\\ugora\\Desktop\\dev\\frello\\templates\\board\\index.html.twig");
     }

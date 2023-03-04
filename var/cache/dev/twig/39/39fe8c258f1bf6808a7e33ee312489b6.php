@@ -85,17 +85,13 @@ class __TwigTemplate_5e08bd465a8996f14578962f7aa7a021 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Create new Board</h1>
+        echo "    <h1>Créer un nouveau tableau</h1>
 
     ";
         // line 8
         echo twig_include($this->env, $context, "board/_form.html.twig");
         echo "
 
-    <a href=\"";
-        // line 10
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_board_index");
-        echo "\">back to list</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -117,7 +113,7 @@ class __TwigTemplate_5e08bd465a8996f14578962f7aa7a021 extends Template
 
     public function getDebugInfo()
     {
-        return array (  97 => 10,  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -127,11 +123,10 @@ class __TwigTemplate_5e08bd465a8996f14578962f7aa7a021 extends Template
 {% block title %}New Board{% endblock %}
 
 {% block body %}
-    <h1>Create new Board</h1>
+    <h1>Créer un nouveau tableau</h1>
 
     {{ include('board/_form.html.twig') }}
 
-    <a href=\"{{ path('app_board_index') }}\">back to list</a>
 {% endblock %}
 ", "board/new.html.twig", "C:\\Users\\ugora\\Desktop\\dev\\frello\\templates\\board\\new.html.twig");
     }
