@@ -2,15 +2,17 @@
 
 namespace App\Controller;
 
+use App\Entity\User;
 use App\Entity\Board;
 use App\Form\BoardType;
-use App\Entity\User;
+use App\Repository\UserRepository;
 use App\Repository\BoardRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class BoardController extends AbstractController
@@ -32,23 +34,25 @@ class BoardController extends AbstractController
     }
 
     #[Route('/new', name: 'app_board_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, BoardRepository $boardRepository, Security $security): Response
+    public function new(Request $request, BoardRepository $boardRepository, Security $security, EntityManagerInterface $entityManager): Response
     {
         $userLogged = $this->denyAccessUnlessGranted('IS_AUTHENTICATED');
-        
+
         $user = $security->getUser();
 
         $board = new Board();
+        $users = [$user];
 
-        $form = $this->createForm(BoardType::class, $board);
-        
-        $board->setOwner($user);
+
+        $form = $this->createForm(BoardType::class, $board, [
+            'users' => $users,
+        ]);
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-        
             $boardRepository->save($board, true);
-
+            $this->addFlash('success', 'Le tableau a été créé avec succès !');
             return $this->redirectToRoute('app_board_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -58,6 +62,8 @@ class BoardController extends AbstractController
             'userLogged' => $userLogged
         ]);
     }
+
+
 
     #[Route('/{id}', name: 'app_board_show', methods: ['GET'])]
     public function show(Board $board): Response
